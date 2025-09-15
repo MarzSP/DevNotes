@@ -2,7 +2,7 @@
 title: 'Anti-patterns in Architecture'
 description: 'When architecture goes wrong'
 pubDate: 'Sept 15 2025'
-heroImage: '../../assets/blog-placeholder-1.jpg'
+heroImage: '../../assets/blog-placeholder-4.jpg'
 ---
 
 Patterns are proven solutions. **Antipatterns** are their evil twins: recurring *bad* solutions that look tempting but cause pain in the *** later. Here are some of the most common ones:

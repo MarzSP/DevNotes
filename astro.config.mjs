@@ -6,6 +6,6 @@ import { defineConfig } from 'astro/config';
 
 export default defineConfig({
 	site: 'https://marzsp.github.io/DevNotes',
-	base: '/DevNotes',
+	base: '/DevNotes/',
 	integrations: [mdx(), sitemap()],
 });

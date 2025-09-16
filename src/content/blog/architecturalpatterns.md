@@ -29,3 +29,8 @@ An older cousin of microservices. Systems are built from reusable services, ofte
 
 ### Why patterns matter
 Architecture patterns are tried and tested blueprints. They give teams a shared vocabulary and help avoid reinventing the wheel. Most real-world systems combine multiple patterns (for example, a layered microservice that’s event-driven inside).
+
+---
+*References:*
+- Bass, L., Clements, P., & Kazman, R. (2012). Software Architecture in Practice (3rd ed.). Addison-Wesley.
+- Nuseibeh, B. (2001). Weaving Together Requirements and Architectures. IEEE Computer, 34(3), 115-117.

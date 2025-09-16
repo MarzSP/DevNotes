@@ -36,3 +36,6 @@ Think of it like filling out a nerdy mad-lib: *“When X happens in Y conditions
 - **Modifiability**: “Adding a new inspection type should not require changes to existing modules, only a new module.”
 
 ---
+*References:*
+- Bass, L., Clements, P., & Kazman, R. (2012). Software Architecture in Practice (3rd ed.). Addison-Wesley.
+- Nuseibeh, B. (2001). Weaving Together Requirements and Architectures. IEEE Computer, 34(3), 115-117.

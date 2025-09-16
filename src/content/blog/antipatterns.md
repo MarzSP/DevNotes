@@ -23,3 +23,8 @@ The “one tool for everything” syndrome. Teams force a familiar technology in
 
 ### Why antipatterns matter
 Antipatterns often start with good intentions: quick delivery, reuse, future-proofing. But without balance, they create fragile, hard-to-maintain systems. Spotting them early — and calling them out — is part of every architect’s job.  
+
+---
+*References:*
+- Bass, L., Clements, P., & Kazman, R. (2012). Software Architecture in Practice (3rd ed.). Addison-Wesley.
+- Nuseibeh, B. (2001). Weaving Together Requirements and Architectures. IEEE Computer, 34(3), 115-117.

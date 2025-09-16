@@ -35,3 +35,8 @@ Architects  guide developers, ensure consistency, and revisit decisions when rea
 
 ### 8. Manage evolution
 Software never stands still. Architects keep the system adaptable, handling new requirements, scaling needs, and technology shifts without losing control.
+
+---
+*References:*
+- Bass, L., Clements, P., & Kazman, R. (2012). Software Architecture in Practice (3rd ed.). Addison-Wesley.
+- Nuseibeh, B. (2001). Weaving Together Requirements and Architectures. IEEE Computer, 34(3), 115-117.

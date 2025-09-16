@@ -26,3 +26,8 @@ A client says “the system must handle many users.” That’s vague. While exp
 - Leads to systems that better fit both business needs and technical realities.
 
 The Twin Peaks model reminds us: building software is never just *gather then code*. It’s an ongoing conversation between what users want and how we can make it work.  
+
+---
+*References:*
+- Bass, L., Clements, P., & Kazman, R. (2012). Software Architecture in Practice (3rd ed.). Addison-Wesley.
+- Nuseibeh, B. (2001). Weaving Together Requirements and Architectures. IEEE Computer, 34(3), 115-117.

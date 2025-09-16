@@ -2,6 +2,8 @@
 title: 'What do software architects do?'
 description: 'A deep dive into the role of software architects'
 pubDate: 'Sept 15 2025'
+theme:
+  - Architecture
 heroImage: '../../assets/blog-placeholder-2.jpg'
 ---
 The job title *software architect* sounds fancy, but what do architects actually **do** day-to-day? 

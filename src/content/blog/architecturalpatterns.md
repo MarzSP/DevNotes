@@ -2,6 +2,9 @@
 title: 'Architectural Patterns'
 description: 'Software Architecture Patterns'
 pubDate: 'Sept 15 2025'
+theme: 
+  - Patterns
+  - Architecture
 heroImage: '../../assets/blog-placeholder-2.jpg'
 ---
 

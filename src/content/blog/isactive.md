@@ -2,8 +2,7 @@
 title: 'Rethinking boolean isActive'
 description: 'Why bools like isActive can lead to messy code'
 pubDate: 'Sept 16 2025'
-theme:
-- Code
+tags: ['Code']
 heroImage: '../../assets/blog-placeholder-4.jpg'
 ---
 

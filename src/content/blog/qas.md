@@ -1,9 +1,8 @@
 ---
 title: 'Quality Attribute Scenarios'
 description: 'From vague goals to concrete tests'
-pubDate: 'Sept 15 2025'
-theme: 
-  - Architecture
+pubDate: 'Sept 17 2025'
+tags: ['Architecture']
 heroImage: '../../assets/blog-placeholder-2.jpg'
 ---
 Saying “a system must be reliable and secure” sounds great, but it doesn’t really when you’re designing or testing it. Reliability for *who*? Secure *against what*?

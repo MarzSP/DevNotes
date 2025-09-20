@@ -1,10 +1,8 @@
 ---
 title: 'Architectural Patterns'
 description: 'Software Architecture Patterns'
-pubDate: 'Sept 15 2025'
-theme: 
-  - Patterns
-  - Architecture
+pubDate: 'Sept 13 2025'
+tags: ['Patterns', 'Architecture']
 heroImage: '../../assets/blog-placeholder-2.jpg'
 ---
 

@@ -2,9 +2,7 @@
 title: 'Anti-patterns in Architecture'
 description: 'When architecture goes wrong'
 pubDate: 'Sept 15 2025'
-theme: 
-  - Patterns
-  - Architecture
+tags: ['Architecture', 'Patterns']
 heroImage: '../../assets/blog-placeholder-4.jpg'
 ---
 

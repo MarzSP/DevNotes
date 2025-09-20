@@ -2,8 +2,7 @@
 title: 'SOLID'
 description: 'The principles of good object-oriented programming'
 pubDate: 'Sept 16 2025'
-theme: 
-  - Code
+tags: ['Code']
 heroImage: '../../assets/blog-placeholder-2.jpg'
 ---
 

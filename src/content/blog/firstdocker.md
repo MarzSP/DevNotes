@@ -1,10 +1,8 @@
 ---
 title: 'Writing your first docker-compose.yml'
 description: 'You can do it'
-pubDate: 'Sept 16 2025'
-theme:
-    - Docker
-    - Guide
+pubDate: 'Sept 17 2025'
+tags: ['Guide', 'Docker']
 heroImage: '../../assets/blog-placeholder-5.jpg'
 ---
 

@@ -1,9 +1,8 @@
 ---
 title: 'The Twin Peaks Model'
 description: 'Twin Peaks Model'
-pubDate: 'Sept 15 2025'
-theme: 
-  - Architecture
+pubDate: 'Sept 18 2025'
+tags: ['Architecture']
 heroImage: '../../assets/blog-placeholder-3.jpg'
 ---
 The **Twin Peaks model** (by Bashar Nuseibeh, 2001) shows how requirements and architecture evolve together. Instead of finishing requirements first and only then designing architecture, both “peaks” rise side by side.

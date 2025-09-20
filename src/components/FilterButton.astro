@@ -1,0 +1,12 @@
+---
+const { label, value } = Astro.props;
+---
+<!-- Filter button component -->
+<button
+    type="button"
+    class="blog-filter px-3 py-1 rounded bg-gray-200 hover:bg-gray-300 text-sm"
+    data-filter={value}
+    aria-pressed="false"
+>
+    {label}
+</button>

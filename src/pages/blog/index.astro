@@ -5,12 +5,39 @@ import BaseHead from '../../components/BaseHead.astro';
 import Footer from '../../components/Footer.astro';
 import FormattedDate from '../../components/FormattedDate.astro';
 import Header from '../../components/Header.astro';
+import FilterButton from '../../components/FilterButton.astro';
 import { SITE_DESCRIPTION, SITE_TITLE } from '../../consts';
 
+// Helpers
+function toArray(v: unknown): string[] {
+	if (Array.isArray(v)) return v as string[];
+	if (typeof v === 'string' && v) return [v];
+	return [];
+}
+
+function toClass(s: string): string {
+	return s
+		.toLowerCase()
+		.trim()
+		.replace(/\s+/g, '-')
+		.replace(/[^a-z0-9-_]/g, '');
+}
+
+// Posts
 const posts = (await getCollection('blog')).sort(
-	(a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf(),
+	(a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf()
 );
-const base = import.meta.env.BASE_URL
+
+// Collect unique filters from tags
+const rawFilters = posts.flatMap((p) => {
+	const d = p.data as any;
+	const tags = toArray(d.tags);
+	if (tags.length) return tags;
+	return toArray(d.theme);
+});
+
+const uniqueFilters = [...new Set(rawFilters.map((f) => f.trim()).filter(Boolean))];
+const base = import.meta.env.BASE_URL;
 ---
 
 <!doctype html>
@@ -18,72 +45,29 @@ const base = import.meta.env.BASE_URL
 <head>
 	<BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
 	<style>
-		main {
-			width: 960px;
-		}
-		ul {
-			display: flex;
-			flex-wrap: wrap;
-			gap: 2rem;
-			list-style-type: none;
-			margin: 0;
-			padding: 0;
-		}
-		ul li {
-			width: calc(50% - 1rem);
-		}
-		ul li * {
-			text-decoration: none;
-			transition: 0.2s ease;
-		}
-		ul li:first-child {
-			width: 100%;
-			margin-bottom: 1rem;
-			text-align: center;
-		}
-		ul li:first-child img {
-			width: 100%;
-		}
-		ul li:first-child .title {
-			font-size: 2.369rem;
-		}
-		ul li img {
-			margin-bottom: 0.5rem;
-			border-radius: 12px;
-		}
-		ul li a {
-			display: block;
-		}
-		.title {
-			margin: 0;
-			color: rgb(var(--black));
-			line-height: 1;
-		}
-		.date {
-			margin: 0;
-			color: rgb(var(--gray));
-		}
-		ul li a:hover h4,
-		ul li a:hover .date {
-			color: rgb(var(--accent));
-		}
-		ul a:hover img {
-			box-shadow: var(--box-shadow);
-		}
+		main { width: 960px; }
+		.filters { display:flex; flex-wrap:wrap; gap:.5rem; margin: 1rem 0 1.5rem; }
+		.blog-filter[aria-pressed="true"] { outline: 2px solid currentColor; }
+		.hidden { display: none !important; }
+
+		ul { display:flex; flex-wrap:wrap; gap:2rem; list-style:none; margin:0; padding:0; }
+		ul li { width: calc(50% - 1rem); }
+		ul li * { text-decoration:none; transition: .2s ease; }
+		ul li:first-child { width:100%; margin-bottom:1rem; text-align:center; }
+		ul li:first-child img { width:100%; }
+		ul li:first-child .title { font-size: 2.369rem; }
+		ul li img { margin-bottom:.5rem; border-radius:12px; }
+		ul li a { display:block; }
+		.title { margin:0; color: rgb(var(--black)); line-height:1; }
+		.date { margin:0; color: rgb(var(--gray)); }
+		ul li a:hover h4, ul li a:hover .date { color: rgb(var(--accent)); }
+		ul a:hover img { box-shadow: var(--box-shadow); }
+
 		@media (max-width: 720px) {
-			ul {
-				gap: 0.5em;
-			}
-			ul li {
-				width: 100%;
-				text-align: center;
-			}
-			ul li:first-child {
-				margin-bottom: 0;
-			}
-			ul li:first-child .title {
-				font-size: 1.563em;
-			}
+			ul { gap:.5em; }
+			ul li { width:100%; text-align:center; }
+			ul li:first-child { margin-bottom:0; }
+			ul li:first-child .title { font-size:1.563em; }
 		}
 	</style>
 	<title></title>
@@ -91,26 +75,115 @@ const base = import.meta.env.BASE_URL
 <body>
 <Header />
 <main>
+	<!-- filter bar -->
+	{uniqueFilters.length > 0 && (
+		<div id="filters" class="filters" data-filters={JSON.stringify(uniqueFilters.map(toClass))}>
+			<button type="button" class="blog-filter-all px-3 py-1 rounded bg-gray-300 hover:bg-gray-400 text-sm">All</button>
+			{uniqueFilters.map((f) => (
+				<FilterButton label={f} value={toClass(f)} />
+			))}
+		</div>
+	)}
+
 	<section>
-		<ul>
+		<ul id="blog-grid">
 			{
-				posts.map((post) => (
-					<li>
-						<a href={`${base}blog/${post.id}/`}>
-							{post.data.heroImage && (
-								<Image width={720} height={360} src={post.data.heroImage} alt="" />
-							)}
-							<h4 class="title">{post.data.title}</h4>
-							<p class="date">
-								<FormattedDate date={post.data.pubDate} />
-							</p>
-						</a>
-					</li>
-				))
+				posts.map((post, i) => {
+					const filters = [
+						...toArray(post.data.tags),
+						...toArray(post.data.tags && post.data.theme ? [] : toArray(post.data.theme)) // don’t duplicate when both set
+          ].map(toClass);
+
+					// classes + data for filtering
+          const liClass = ['blog-card', ...filters].join(' ');
+					const dataFilters = JSON.stringify(filters);
+
+					return (
+						<li class={liClass} data-filters={dataFilters}>
+							<a href={`${base}blog/${post.id}/`}>
+								{post.data.heroImage && (
+									<Image width={720} height={360} src={post.data.heroImage} alt="" />
+								)}
+								<h4 class="title">{post.data.title}</h4>
+								<p class="date"><FormattedDate date={post.data.pubDate} /></p>
+							</a>
+						</li>
+					);
+				})
 			}
 		</ul>
+
+		<p id="no-results" class="hidden" style="margin-top:1rem; color: rgb(var(--gray));">
+			No posts match this filter.
+		</p>
 	</section>
 </main>
 <Footer />
+
+<!-- CLIENT SCRIPT -->
+<script is:inline>
+	(function () {
+		const params = new URLSearchParams(location.search);
+		const preselect = params.get('tag') || params.get('theme') || '';
+
+		const allBtn = document.querySelector('.blog-filter-all');
+		const filterBtns = Array.from(document.querySelectorAll('.blog-filter'));
+		const cards = Array.from(document.querySelectorAll('#blog-grid .blog-card'));
+		const noResults = document.getElementById('no-results');
+
+		function updateEmptyState() {
+			const anyVisible = cards.some(c => !c.classList.contains('hidden'));
+			noResults?.classList.toggle('hidden', anyVisible);
+		}
+
+		function showAll() {
+			cards.forEach(c => c.classList.remove('hidden'));
+			filterBtns.forEach(b => b.setAttribute('aria-pressed','false'));
+			allBtn?.setAttribute('aria-pressed','true');
+			updateEmptyState();
+		}
+
+		function applyFilter(filterClass) {
+			if (!filterClass) return showAll();
+			allBtn?.setAttribute('aria-pressed','false');
+			filterBtns.forEach(b => b.setAttribute('aria-pressed', b.dataset.filter === filterClass ? 'true' : 'false'));
+			cards.forEach(card => {
+				const list = JSON.parse(card.dataset.filters || '[]');
+				card.classList.toggle('hidden', !list.includes(filterClass));
+			});
+			updateEmptyState();
+		}
+
+		allBtn?.addEventListener('click', () => {
+			const next = new URL(location.href);
+			next.searchParams.delete('tag');
+			next.searchParams.delete('theme');
+			history.replaceState({}, '', next.toString());
+			showAll();
+		});
+
+		filterBtns.forEach(btn => {
+			btn.addEventListener('click', () => {
+				const f = btn.dataset.filter;
+				const next = new URL(location.href);
+				next.searchParams.delete('theme');
+				next.searchParams.set('tag', f);
+				history.replaceState({}, '', next.toString());
+				applyFilter(f);
+			});
+		});
+
+		if (preselect) {
+			const safe = preselect.toLowerCase().replace(/\s+/g,'-').replace(/[^a-z0-9-_]/g,'');
+			const next = new URL(location.href);
+			next.searchParams.delete('theme');
+			next.searchParams.set('tag', safe);
+			history.replaceState({}, '', next.toString());
+			applyFilter(safe);
+		} else {
+			showAll();
+		}
+	})();
+</script>
 </body>
 </html>

@@ -1,0 +1,88 @@
+---
+title: 'Demystifying CI/CD'
+description: 'CI/CD components for absolute n00bs'
+pubDate: 'Oct 01 2025'
+tags: ['CICD']
+heroImage: '../../assets/blog-placeholder-3.jpg'
+---
+
+When you start learning to code and start talking about deploying apps, you’ll often hear the terms **CI/CD** or **pipelines** thrown around. Like it's the most obvious thing in the world.
+So, have no shame, let’s break it down and demystify what _some_ of these terms mean.
+
+## What is CI/CD?
+
+If you’ve ever uploaded code and had _that_ brief moment of mild panic, *“Please don’t break… please don’t break…”*,  tadaa! You already understand why CI/CD exists.
+
+---
+
+## 💡 What Is CI/CD?
+
+**CI/CD** stands for **Continuous Integration** and **Continuous Deployment (or Delivery)**.
+It’s an abbreviation for saying:
+
+> Let’s automate all that stuff that needs to happen between writing code and shipping it.
+
+Instead of manually building, testing, and deploying every time you make a change, a **CI/CD pipeline** does it for you, automatically and consistently. Nifty right?
+Now we have a clue as to what's going on, let's look into it a bit more.
+
+---
+
+## Main Components
+
+1. **Source Control** – where your code lives (GitHub, Forgejo, GitLab, Bitbucket, etc.)
+2. **Build** – compile, bundle, or install dependencies
+3. **Test** – run automated tests to catch bugs early
+4. **Deploy** – ship your app to a server or hosting platform
+5. **Feedback** – logs, reports etc.
+
+---
+
+## Examples of Types of Pipelines
+
+| Platform | Description |
+|-----------|--------------|
+| **GitHub Actions** | Built into GitHub: perfect for open source and small teams. Uses YAML workflows. |
+| **Forgejo Actions** | Self-hosted open-source alternative to GitHub Actions. |
+| **GitLab CI/CD** | Fully integrated runner system, popular for larger dev teams. |
+
+---
+
+## A Basic Example
+So the best way to learn, is by doing it yourself. Try making a little pipeline for a simple Node.js app.
+Here’s a **GitHub Actions** pipeline that runs your tests on every push and deploys when you push to the `main` branch:
+
+```yaml
+# .github/workflows/ci.yml
+name: CI
+
+on:
+  push:
+    branches: [ main ]
+
+jobs:
+  build-and-test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Install dependencies
+        run: npm ci
+      - name: Run tests
+        run: npm test
+      - name: Deploy (only on main)
+        if: github.ref == 'refs/heads/main'
+        run: npm run deploy
+````
+
+Now that doesn’t look too scary, does it?
+Once you have the basic structure working, you can start adding more steps like linting, code coverage, notifications, and more.
+
+### A selection of pipeline options you might want to explore later:
+- **Linting**: Check your code for style and errors (ESLint, Pylint)
+- **Code Coverage**: Measure how much of your code is tested (Coveralls, Codecov)
+- **Notifications**: Send alerts on build status (Slack, Email)
+- **Testing**: Run different types of tests (unit, integration, end-to-end)
+
+#### Want to Try One Yourself?
+
+I’ve included a working example pipeline in the GitHub repo for this post 👇
+👉 See it here (WIP!)

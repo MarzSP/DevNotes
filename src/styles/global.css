@@ -161,3 +161,54 @@ hr {
 	--btn-border: transparent;
 }
 
+/* Modern buttons */
+button, .btn {
+	-webkit-appearance: none;
+	appearance: none;
+	border: none;
+	cursor: pointer;
+	font: inherit;
+}
+
+.btn {
+	--btn-bg: var(--accent);
+	--btn-text: #fff;
+	--btn-border: transparent;
+
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	gap: 0.5rem;
+	padding: 0.6rem 1rem;
+	border-radius: 9999px;
+	background: var(--btn-bg);
+	color: var(--btn-text);
+	font-weight: 600;
+	line-height: 1;
+	box-shadow: 0 2px 6px rgba(var(--gray), 0.25);
+	transition: background-color .2s, transform .05s, box-shadow .2s;
+}
+
+.btn:hover {
+	background: var(--accent-dark);
+	transform: translateY(-1px);
+}
+
+.btn:active {
+	transform: translateY(0);
+	box-shadow: 0 1px 2px rgba(var(--gray), 0.2);
+}
+
+/* Subtle variant (unpressed filters) */
+.btn--subtle {
+	--btn-bg: rgb(var(--gray-light));
+	--btn-text: rgb(var(--black));
+}
+
+/* Pressed = active filter look */
+.blog-filter[aria-pressed="true"],
+.blog-filter-all[aria-pressed="true"] {
+	--btn-bg: var(--accent);
+	--btn-text: #fff;
+}
+

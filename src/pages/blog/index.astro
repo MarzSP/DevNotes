@@ -78,7 +78,7 @@ const base = import.meta.env.BASE_URL;
 	<!-- filter bar -->
 	{uniqueFilters.length > 0 && (
 		<div id="filters" class="filters" data-filters={JSON.stringify(uniqueFilters.map(toClass))}>
-			<button type="button" class="blog-filter-all px-3 py-1 rounded bg-gray-300 hover:bg-gray-400 text-sm">All</button>
+			<button type="button" class="btn btn--subtle btn--sm blog-filter-all" aria-pressed="true">All</button>
 			{uniqueFilters.map((f) => (
 				<FilterButton label={f} value={toClass(f)} />
 			))}

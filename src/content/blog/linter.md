@@ -3,7 +3,7 @@ title: 'The dreaded linter'
 description: 'CI/CD components for absolute n00bs'
 pubDate: 'Oct 01 2025'
 tags: ['CICD']
-heroImage: '../../assets/blog-placeholder-1.jpg'
+heroImage: '../../assets/blog-placeholder-5.jpg'
 ---
 
 # The dreaded linter

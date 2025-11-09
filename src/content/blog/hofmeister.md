@@ -3,7 +3,7 @@ title: 'Hofmeister Method'
 description: 'A framework for software architecture'
 pubDate: 'Sept 19 2025'
 tags: ['Architecture']
-heroImage: '../../assets/blog-placeholder-2.jpg'
+heroImage: '../../assets/blog-placeholder-architecture.png'
 ---
 ## The Hofmeister Method
 I see software architecture a bit like playing 4D-chess. You have to think several moves ahead, anticipate challenges, and adapt to changing requirements. 

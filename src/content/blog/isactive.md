@@ -3,7 +3,7 @@ title: 'Rethinking boolean isActive'
 description: 'Why bools like isActive can lead to messy code'
 pubDate: 'Sept 16 2025'
 tags: ['Code']
-heroImage: '../../assets/blog-placeholder-4.jpg'
+heroImage: '../../assets/blog-placeholder-code.png'
 ---
 
 _When I first started my studies, I thought using boolean flags like `isActive` was an easy peasy way to keep track of state. But once I started working in the field I learned very quickly that this simplicity just doesn't scale._

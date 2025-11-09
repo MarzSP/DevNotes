@@ -3,7 +3,7 @@ title: 'Architectural Patterns'
 description: 'Software Architecture Patterns'
 pubDate: 'Sept 13 2025'
 tags: ['Patterns', 'Architecture']
-heroImage: '../../assets/blog-placeholder-2.jpg'
+heroImage: '../../assets/blog-placeholder-architecture.png'
 ---
 
 Software architecture patterns give structure to complex systems. Here are the **core ones** you’ll hear about most often:

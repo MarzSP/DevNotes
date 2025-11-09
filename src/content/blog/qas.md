@@ -3,7 +3,7 @@ title: 'Quality Attribute Scenarios'
 description: 'From vague goals to concrete tests'
 pubDate: 'Sept 17 2025'
 tags: ['Architecture']
-heroImage: '../../assets/blog-placeholder-2.jpg'
+heroImage: '../../assets/blog-placeholder-architecture.png'
 ---
 Saying “a system must be reliable and secure” sounds great, but it doesn’t really when you’re designing or testing it. Reliability for *who*? Secure *against what*?
 That’s where Quality Attribute Scenarios (QAS) step in: they turn vague but important words into clear, real-world situations.

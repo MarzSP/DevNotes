@@ -3,7 +3,7 @@ title: 'Writing your first docker-compose.yml'
 description: 'You can do it'
 pubDate: 'Sept 17 2025'
 tags: ['Guide', 'Docker']
-heroImage: '../../assets/blog-placeholder-5.jpg'
+heroImage: '../../assets/blog-placeholder-docker.png'
 ---
 
 Always worked on projects where the `docker-compose.yml` already existed? Or your smart classmates made one for you?

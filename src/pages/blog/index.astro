@@ -102,7 +102,7 @@ const base = import.meta.env.BASE_URL;
 						<li class={liClass} data-filters={dataFilters}>
 							<a href={`${base}blog/${post.id}/`}>
 								{post.data.heroImage && (
-									<Image width={720} height={360} src={post.data.heroImage} alt="" />
+									<Image width={480} height={240} src={post.data.heroImage} alt="" />
 								)}
 								<h4 class="title">{post.data.title}</h4>
 								<p class="date"><FormattedDate date={post.data.pubDate} /></p>

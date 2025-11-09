@@ -3,7 +3,7 @@ title: 'Pub/Sub Architecture'
 description: 'Decoupling with Publish/Subscribe'
 pubDate: 'Sept 20 2025'
 tags: ['Architecture', 'Patterns']
-heroImage: '../../assets/blog-placeholder-2.jpg'
+heroImage: '../../assets/blog-placeholder-patterns.png'
 ---
 # Pub/Sub Architecture
 

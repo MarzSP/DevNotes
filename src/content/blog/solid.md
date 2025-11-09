@@ -3,7 +3,7 @@ title: 'SOLID'
 description: 'The principles of good object-oriented programming'
 pubDate: 'Sept 16 2025'
 tags: ['Code']
-heroImage: '../../assets/blog-placeholder-2.jpg'
+heroImage: '../../assets/blog-placeholder-guides.png'
 ---
 
 The **SOLID** principles are a set of guidelines for writing maintainable and flexible object-oriented code. They were introduced by Robert C. Martin (Uncle Bob) and have since become a cornerstone of good software design. 

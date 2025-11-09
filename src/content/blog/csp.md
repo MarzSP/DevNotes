@@ -3,7 +3,7 @@ title: 'CSP'
 description: 'What CSP means to me'
 pubDate: 'Oct 5 2025'
 tags: ['Security']
-heroImage: '../../assets/blog-placeholder-4.jpg'
+heroImage: '../../assets/blog-placeholder-security.png'
 ---
 # What is a CSP Header?
 

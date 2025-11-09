@@ -3,7 +3,7 @@ title: 'Package.json'
 description: 'Learning to work with package.json files'
 pubDate: 'Oct 6 2025'
 tags: ['javascript']
-heroImage: '../../assets/blog-placeholder-4.jpg'
+heroImage: '../../assets/blog-placeholder-js.png'
 ---
 
 ## Learning to Work with package.json

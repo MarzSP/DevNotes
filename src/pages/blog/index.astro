@@ -30,7 +30,8 @@ const posts = (await getCollection('blog')).sort(
 
 // Collect unique filters from tags
 const rawFilters = posts.flatMap((p) => {
-	const d = p.data as any;
+    // data shape may vary; treat as unknown and coerce safely to record-like object
+    const d = p.data as unknown as Record<string, unknown>;
 	const tags = toArray(d.tags);
 	if (tags.length) return tags;
 	return toArray(d.theme);
@@ -88,7 +89,7 @@ const base = import.meta.env.BASE_URL;
 	<section>
 		<ul id="blog-grid">
 			{
-				posts.map((post, i) => {
+				posts.map((post, _i) => {
 					const filters = [
 						...toArray(post.data.tags),
 						...toArray(post.data.tags && post.data.theme ? [] : toArray(post.data.theme)) // don’t duplicate when both set

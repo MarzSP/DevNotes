@@ -6,7 +6,10 @@
     "dev": "astro dev",
     "build": "astro build",
     "preview": "astro preview",
-    "astro": "astro"
+    "astro": "astro",
+    "lint": "eslint . --ext .js,.jsx,.ts,.tsx,.astro",
+    "lint:fix": "eslint . --ext .js,.jsx,.ts,.tsx,.astro --fix",
+    "format": "prettier --write ."
   },
   "dependencies": {
     "@astrojs/mdx": "^4.3.5",
@@ -14,5 +17,13 @@
     "@astrojs/sitemap": "^3.5.1",
     "astro": "^5.13.7",
     "sharp": "^0.34.3"
+  },
+  "devDependencies": {
+    "eslint": "^8.50.0",
+    "eslint-plugin-astro": "^1.0.0",
+    "astro-eslint-parser": "^1.0.0",
+    "@typescript-eslint/parser": "^6.9.0",
+    "@typescript-eslint/eslint-plugin": "6.9.0",
+    "prettier": "^3.6.2"
   }
 }

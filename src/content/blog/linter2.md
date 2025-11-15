@@ -13,8 +13,10 @@ Let's go!
 
 ### First: What Isn’t a Linter?
 
-A linter is *not*:
+A linter is **not**:
+
 A compiler
+
 A formatter
 
 A linter analyzes code for:
@@ -24,7 +26,7 @@ Bad patterns
 
 Style violations
 
-“Why would you even write that?!” situations
+*“Why would you even write that?!”* situations
 
 And instead of saying “that’s fine,”
 it says:
@@ -34,11 +36,11 @@ it says:
 
 To build a linter, you need three things:
 
-Code to inspect
+1. Code to inspect
 
-Rules to enforce
+2. Rules to enforce
 
-A system to yell at you when you break those rules
+3. A system to yell at you when you break those rules
 
 This is where ESLint (or your linter of choice) and GitHub Actions shine together like a passive-aggressive duo.
 
@@ -57,7 +59,7 @@ npx eslint --init
 ```
 This creates an `.eslintrc` file where you can define your rules.
 
-I have a working linter for this project. You can check it out here: [GitHub Repository](https://github.com/MarzSP/DevNotes/blob/main/.github/workflows/lint.yml)
+I have a working linter for this project. You can check it out here: [Marzsp's Repo: Linter](https://github.com/MarzSP/DevNotes/blob/main/.github/workflows/lint.yml)
 
 #### Step 2 — Define Your Rules
 In your `.eslintrc` file, you can specify rules.
@@ -116,19 +118,20 @@ Let’s break down what this masterpiece does.
 1. What's in a name?
 
 lint
-Simple. Direct. Threatening.
+
+KISS. That means Keep It Simple, Stupid. 
 
 2. Triggers
 
 Runs on:
 
-every push
+- every push
 
-every pull request
+- every pull request
 
-every time you make a typo in a branch name
+- every time you make a typo in a branch name
 
-every moment you least expect it
+- every moment you least expect it *just kidding*
 
 3. Runner
 
@@ -138,15 +141,15 @@ This is just GitHub’s polite way of saying:
 
 4. Steps
 
-Checkout your repo
+- Checkout your repo
 
-Install Node
+- Install Node
 
-Install dependencies
+- Install dependencies
 
-Run your linter
+- Run your linter
 
-Smile, 'cos you've just built a linter! w00p!
+- Smile, 'cos you've just built a linter! w00p!
 
 
 

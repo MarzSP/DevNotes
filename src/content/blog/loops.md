@@ -16,7 +16,7 @@ for (int i = 0; i < stuff.size(); i++) {
 }
 ````
 
-This looks like a duck, sounds like a duck and quack like a duck. It does exactly what you tell it to do, which isn't always what you think it is that you told it.
+This looks like a duck, walks like a duck and quacks like a duck. It does exactly what you tell it to do, which isn't always what you think it is that you told it.
 
 You can use this OG classic when you need an index, a step or control. Avoid this one if you can't count things without using <= instead of <.
 

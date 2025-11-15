@@ -11,8 +11,8 @@ Sooner or later you're going to come into contact with Lists. You can call it a 
 
 The important part is how we store and manage data - this can have implications for your performance, memory use and code clarity.
 
-Java, for example, has several kinds of Lists. Par example:
-- Arrays. Fixed length, memory efficient access
+Java, for example, has several kinds of Lists. (oh and List is an interface!) Par example:
+- ~~Arrays. Fixed length, memory efficient access~~. Arrays are a datatype not List implementation, gotcha.
 - ArrayLists. Dynamic, resizable versions of arrays
 - LinkedLists. Great for inserting and deleting items in a list.
 - Immutable Lists. Have a predictable state = good for concurrency.
@@ -20,12 +20,12 @@ Java, for example, has several kinds of Lists. Par example:
 It's understanding the small differences between these data structures that makes all the difference.
 
 ### Pros and Cons
-| **Option**         | **Pros**                      | **Cons**                             |
-| ------------------ | ----------------------------- | ------------------------------------ |
-| **Array**          | Simple, fast access           | Fixed size, costly resizing          |
-| **LinkedList**     | Cheap inserts/removals        | Poor cache locality, O(n) access     |
-| **ArrayList**      | Dynamic resizing, fast access | Slight overhead on expansion         |
-| **Immutable List** | Thread-safe, predictable      | Copy on every change, higher GC load |
+| **Option**         | **Pros**                      | **Cons**                              |
+|--------------------|-------------------------------|---------------------------------------|
+| **~~Array~~**      | Datatype: Simple, fast access | Datatype: Fixed size, costly resizing |
+| **LinkedList**     | Cheap inserts/removals        | Poor cache locality, O(n) access      |
+| **ArrayList**      | Dynamic resizing, fast access | Slight overhead on expansion          |
+| **Immutable List** | Thread-safe, predictable      | Copy on every change, higher GC load  |
 ### List
 The Interface That Defines “a Collection in Order”
 

@@ -1,5 +1,5 @@
 ---
-title: 'Greedy Algorithms 1'
+title: 'Greedy Algorithms: Part 1'
 description: 'The change-making problem.'
 pubDate: 'Nov 15 2025'
 tags: ['Code']

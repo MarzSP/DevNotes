@@ -1,5 +1,5 @@
 ---
-title: 'Memoization: Teaching Your Code to Remember Stuff
+title: 'Memoization: Teaching Your Code to Remember Stuff'
 description: 'Memoization functions for efficiency'
 pubDate: 'Nov 19 2025'
 tags: ['Code']
@@ -8,7 +8,7 @@ heroImage: '../../assets/blog-placeholder-code.png'
 
 Want to know how to make your code faster and more efficient? Meet **memoization** — the cheat code that helps your functions remember the results of big computations so they don’t have to redo the work every time.
 
-Devs love Recursion. (Don't know what recursion is? [Check out our previous blog post first](./recursion.md)) 
+Devs love Recursion. (Don't know what recursion is? [Check out our previous blog post first](./recursiondummy.md)) 
 
 Until recursion loves them back by performing 58 million repeated calculations, melting their CPU, and making IntelliJ beg for mercy.
 

@@ -1,5 +1,5 @@
 ---
-title: 'Toughts on Big O Notation'
+title: 'Thoughts on Big O Notation'
 description: 'Having your class truths challenged'
 pubDate: 'Dec 6 2025'
 tags: ['Code']

@@ -1,5 +1,5 @@
 ---
-title: 'Dijkstra\'s Algorithm'
+title: "Dijkstra's Algorithm"
 description: 'The art of finding the shortest path.'
 pubDate: 'Jan 13 2026'
 tags: ['Code']
@@ -107,4 +107,3 @@ Using this implementation on our example graph, starting from vertex A, we get t
 Now there's a few things to note here.
 1. Dijkstra's Algorithm only works with graphs that have non-negative edge weights. 
 2. Once the shortest path to a vertex is found, it is finalized and will not be updated again.
-

@@ -6,7 +6,16 @@ import Footer from '../components/Footer.astro';
 import FormattedDate from '../components/FormattedDate.astro';
 import Header from '../components/Header.astro';
 
-const { title, description, pubDate, updatedDate, heroImage, fullWidth = false } = Astro.props;
+
+const {
+	title,
+	description,
+	pubDate,
+	updatedDate,
+	heroImage,
+	fullWidth = false,
+	showDate = true,
+} = Astro.props;
 ---
 
 <html lang="en">
@@ -182,6 +191,7 @@ const { title, description, pubDate, updatedDate, heroImage, fullWidth = false }
 
 	<body>
 		<Header />
+
 		<main>
 			<article>
 				<div class="hero-image">
@@ -189,17 +199,23 @@ const { title, description, pubDate, updatedDate, heroImage, fullWidth = false }
 				</div>
 				<div class={fullWidth ? 'prose prose--wide' : 'prose'}>
 					<div class="title">
-						<div class="date">
-							<FormattedDate date={pubDate} />
-							{
-								updatedDate && (
-									<div class="last-updated-on">
-										Last updated on <FormattedDate date={updatedDate} />
-									</div>
-								)
-							}
-						</div>
 						<h1>{title}</h1>
+						{description && (
+							<div style="max-width:720px;margin:0.5rem auto;padding:0.25rem 1rem;color:inherit;font-size:1rem;">
+								<p style="margin:0;">{description}</p>
+							</div>
+						)}
+						{showDate && pubDate && (
+							<div class="date">
+								<FormattedDate date={pubDate} />
+							</div>
+						)}
+
+						{showDate && updatedDate && (
+							<div class="last-updated-on">
+								Last updated on <FormattedDate date={updatedDate} />
+							</div>
+						)}
 						<hr />
 					</div>
 					<slot />

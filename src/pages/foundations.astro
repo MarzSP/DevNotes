@@ -5,7 +5,6 @@ const foundations = [
 	{
 		id: 'websites',
 		title: 'Websites',
-		description: 'Useful sites and references.',
 		items: [
 			{ label: 'MDN Web Docs', url: 'https://developer.mozilla.org/' },
 			{ label: 'Developer Roadmaps', url: 'https://roadmap.sh/' },
@@ -15,14 +14,14 @@ const foundations = [
 			{ label: 'freeCodeCamp', url: 'https://www.freecodecamp.org/' },
 			{ label: 'W3Schools', url: 'https://www.w3schools.com/' },
 			{ label: 'Big-O Cheat Sheet', url: 'https://www.bigocheatsheet.com/' },
-			{ label: 'GeeksforGeeks', url: 'https://www.geeksforgeeks.org/' }
+			{ label: 'GeeksforGeeks', url: 'https://www.geeksforgeeks.org/' },
+			{ label: 'Refactoring Guru', url: 'https://refactoring.guru/' },
 
 		],
 	},
 	{
 		id: 'books',
 		title: 'Books',
-		description: 'Books that shaped my thinking',
 		items: [
 			{
 				title: 'If it\'s smart, it\'s vulnerable' ,
@@ -52,12 +51,15 @@ const foundations = [
 				title: 'Patterns of Enterprise Application Architecture',
 				author: 'Martin Fowler',
 			},
+			{
+				title: 'Thinking, fast and slow',
+				author: 'Daniel Kahneman',
+			}
 		],
 	},
 	{
 		id: 'podcasts',
 		title: 'Podcasts',
-		description: 'Podcasts that explore security, technology, science, and the human side of systems.',
 		items: [
 			{
 				label: 'Darknet Diaries',
@@ -75,6 +77,22 @@ const foundations = [
 				label: 'Brave New Planet',
 				url: 'https://www.bravenewplanet.net/'
 			},
+			{
+				label: 'The Jordan Harbinger Show',
+				url: 'https://www.jordanharbinger.com/podcast/'
+			},
+			{
+				label: 'TechStuff',
+				url: 'https://www.iheart.com/podcast/105-techstuff-26941194/'
+			},
+			{
+				label: 'Hacked',
+				url: 'https://www.podcastone.com/hacked'
+			},
+			{
+				label: 'A Question of Science',
+				url: 'https://www.bbc.co.uk/programmes/b006qshd'
+			},
 		],
 	},
 ];
@@ -82,8 +100,7 @@ const foundations = [
 
 <Layout
 	title="Foundations"
-	description="Core concepts and foundational notes."
-	pubDate={new Date('Jan 18 2026')}
+	description="Websites, books and podcasts that have shaped my understanding of technology and security."
 	fullWidth={true}
 >
 	<div class="foundations-grid">

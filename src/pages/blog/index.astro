@@ -3,7 +3,6 @@ import { Image } from 'astro:assets';
 import { getCollection } from 'astro:content';
 import BaseHead from '../../components/BaseHead.astro';
 import Footer from '../../components/Footer.astro';
-import FormattedDate from '../../components/FormattedDate.astro';
 import Header from '../../components/Header.astro';
 import FilterButton from '../../components/FilterButton.astro';
 import { SITE_DESCRIPTION, SITE_TITLE } from '../../consts';
@@ -108,7 +107,7 @@ const base = import.meta.env.BASE_URL;
 									<Image width={480} height={240} src={post.data.heroImage} alt="" />
 								)}
 								<h4 class="title">{post.data.title}</h4>
-								<p class="date"><FormattedDate date={post.data.pubDate} /></p>
+								<!-- date removed from listing: individual posts still show dates -->
 							</a>
 						</li>
 					);

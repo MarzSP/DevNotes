@@ -1,5 +1,83 @@
 ---
 import Layout from '../layouts/BlogPost.astro';
+
+const foundations = [
+	{
+		id: 'websites',
+		title: 'Websites',
+		description: 'Useful sites and references.',
+		items: [
+			{ label: 'MDN Web Docs', url: 'https://developer.mozilla.org/' },
+			{ label: 'Developer Roadmaps', url: 'https://roadmap.sh/' },
+			{ label: 'GitHub Docs', url: 'https://docs.github.com/' },
+			{ label: 'Can I use', url: 'https://caniuse.com/' },
+			{ label: 'CSS-Tricks', url: 'https://css-tricks.com/' },
+			{ label: 'freeCodeCamp', url: 'https://www.freecodecamp.org/' },
+			{ label: 'W3Schools', url: 'https://www.w3schools.com/' },
+			{ label: 'Big-O Cheat Sheet', url: 'https://www.bigocheatsheet.com/' },
+			{ label: 'GeeksforGeeks', url: 'https://www.geeksforgeeks.org/' }
+
+		],
+	},
+	{
+		id: 'books',
+		title: 'Books',
+		description: 'Books that shaped my thinking',
+		items: [
+			{
+				title: 'If it\'s smart, it\'s vulnerable' ,
+				author: 'Mikko Hyppönen',
+			},
+			{
+				title: 'The art of Deception',
+				author: 'Kevin Mitnick',
+			},
+			{
+				title: 'Clean Code',
+				author: 'Robert C. Martin',
+			},
+			{
+				title: 'Pegasus',
+				author: 'Laurent Richard & Sandrine Rigaud',
+			},
+			{
+				title: 'The Basics of Bitcoins and Blockchains',
+				author: 'Antony Lewis',
+			},
+			{
+				title: 'Hacking with Kali Linux',
+				author: 'Glen D. Singh',
+			},
+			{
+				title: 'Patterns of Enterprise Application Architecture',
+				author: 'Martin Fowler',
+			},
+		],
+	},
+	{
+		id: 'podcasts',
+		title: 'Podcasts',
+		description: 'Podcasts that explore security, technology, science, and the human side of systems.',
+		items: [
+			{
+				label: 'Darknet Diaries',
+				url: 'https://darknetdiaries.com/'
+			},
+			{
+				label: 'Smashing Security',
+				url: 'https://www.smashingsecurity.com/'
+			},
+			{
+				label: 'Nerdland (in Dutch)',
+				url: 'https://nerdland.be/podcast/'
+			},
+			{
+				label: 'Brave New Planet',
+				url: 'https://www.bravenewplanet.net/'
+			},
+		],
+	},
+];
 ---
 
 <Layout
@@ -9,14 +87,33 @@ import Layout from '../layouts/BlogPost.astro';
 	fullWidth={true}
 >
 	<div class="foundations-grid">
-		<a class="foundations-box foundations-box--websites" href="#websites">
-			<h2>Websites</h2>
-			<p>Useful sites and online references.</p>
-		</a>
-		<a class="foundations-box foundations-box--books" href="#books">
-			<h2>Books</h2>
-			<p> My booklist </p>
-		</a>
-	</div>
+		{foundations.map((section) => (
+			<section
+				id={section.id}
+				class={`foundations-box foundations-box--${section.id}`}
+			>
+				<h2>{section.title}</h2>
+				<p>{section.description}</p>
 
+				<ul>
+					{section.items.map((item) => (
+						<li>
+							{'url' in item ? (
+								<a href={item.url} target="_blank" rel="noopener noreferrer">
+									<span class="link-label">{item.label}</span>
+									<span class="link-url">{item.url}</span>
+								</a>
+							) : (
+								<>
+									<em>{item.title}</em>
+									{item.author && <span class="muted"> — {item.author}</span>}
+								</>
+							)}
+						</li>
+					))}
+				</ul>
+			</section>
+		))}
+	</div>
 </Layout>
+

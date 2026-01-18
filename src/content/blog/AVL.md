@@ -1,6 +1,6 @@
 ---
 title: 'AVL: Staying Balanced'
-description: 'Becuase a tree isnt a linkedlist'
+description: 'Because a tree isnt a linkedlist'
 pubDate: 'Dec 8 2025'
 tags: ['Code']
 heroImage: '../../assets/blog-placeholder-code.png'

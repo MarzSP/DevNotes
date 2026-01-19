@@ -1,0 +1,120 @@
+---
+import { Image } from 'astro:assets';
+import BaseHead from '../components/BaseHead.astro';
+import Footer from '../components/Footer.astro';
+import Header from '../components/Header.astro';
+
+const {
+    title,
+    description,
+    heroImage,
+} = Astro.props;
+---
+
+<html lang="en">
+<head>
+    <BaseHead title={title} description={description} />
+    <title>{title}</title>
+
+    <style>
+        main {
+            width: calc(100% - 2em);
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 1.5rem 0;
+        }
+
+        .about-grid {
+            display: grid;
+            grid-template-columns: 360px 1fr;
+            gap: 2rem;
+            align-items: start;
+        }
+
+        /* Left column */
+        .left {
+            position: sticky;
+            top: 1.5rem;
+        }
+
+        .hero {
+            width: 100%;
+            display: flex;
+            justify-content: flex-start;
+        }
+
+        .hero img {
+            width: 100%;
+            max-width: 360px;
+            height: auto;
+            border-radius: 12px;
+            box-shadow: var(--box-shadow);
+            display: block;
+        }
+
+        .title {
+            margin-top: 1rem;
+            line-height: 1.1;
+        }
+
+        .title h1 {
+            margin: 0 0 0.5rem 0;
+        }
+
+        .title p {
+            margin: 0;
+            color: rgb(var(--gray));
+        }
+
+        /* Right column */
+        .prose {
+            color: rgb(var(--gray-dark));
+            padding: 0.25rem 0;
+            margin-top: 6rem;
+        }
+
+        .prose :global(p) {
+            margin-top: 0;
+        }
+
+        /* Mobile */
+        @media (max-width: 900px) {
+            .about-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .left {
+                position: static;
+            }
+
+            .hero img {
+                max-width: 510px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+<Header />
+
+<main>
+    <section class="about-grid">
+        <aside class="left">
+            <div class="title">
+                <h1>{title}</h1>
+                {description && <p>{description}</p>}
+            </div>
+            <div class="hero">
+                {heroImage && <Image width={720} height={720} src={heroImage} alt="" />}
+            </div>
+        </aside>
+
+        <article class="prose">
+            <slot />
+        </article>
+    </section>
+</main>
+
+<Footer />
+</body>
+</html>

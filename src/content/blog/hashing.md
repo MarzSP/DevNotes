@@ -5,7 +5,7 @@ pubDate: 'Dec 3 2025'
 tags: ['Code']
 heroImage: '../../assets/blog-placeholder-code.png'
 ---
-# Hashing
+
 Hashing is a fundamental concept in programming and cryptography. For those who don't know me, I have thing for cryptography and security-related topics, so I thought I'd share my lessons on hashing.
 
 Let's start with some of the basics today. KISS (Keep It Simple Stupid).

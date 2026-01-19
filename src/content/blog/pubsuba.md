@@ -5,7 +5,6 @@ pubDate: 'Sept 20 2025'
 tags: ['Architecture', 'Patterns']
 heroImage: '../../assets/blog-placeholder-patterns.png'
 ---
-# Pub/Sub Architecture
 
 Ever needed to let one component talk to many others without knowing who they are? 
 It starts out innocent, but soon you're cooking spaghetti and getting tangled in dependencies.

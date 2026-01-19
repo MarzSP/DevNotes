@@ -5,7 +5,7 @@ pubDate: 'Jan 13 2026'
 tags: ['Code']
 heroImage: '../../assets/blog-placeholder-code.png'
 ---
-# Dijkstra's Algorithm
+
 In my previous post on [Graphs for Beginners](./graph1.md), we covered the basics of graphs, including vertices, edges, and different types of graphs. Today, we're going to dive into one of the most famous algorithms for finding the shortest path in a graph: Dijkstra's Algorithm.
 
 ## What is Dijkstra's Algorithm?

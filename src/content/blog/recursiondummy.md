@@ -6,7 +6,6 @@ tags: ['Code']
 heroImage: '../../assets/blog-placeholder-code.png'
 ---
 
-## Recursion
 Recursion is a subject that I find developers often make out to be way more complicated than it actually is. In this post, I want to demystify recursion and show you how it works with a simple example.
 At its core, recursion is a programming technique where a function calls itself to solve a smaller instance.
 This is particularly useful for problems that can be broken down into smaller, similar subproblems.

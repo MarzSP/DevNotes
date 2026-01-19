@@ -5,7 +5,7 @@ pubDate: 'Sept 19 2025'
 tags: ['Architecture']
 heroImage: '../../assets/blog-placeholder-architecture.png'
 ---
-## The Hofmeister Method
+
 I see software architecture a bit like playing 4D-chess. You have to think several moves ahead, anticipate challenges, and adapt to changing requirements. 
 
 It's 80% arguing about boxes and arrows and 20% actual architecture. However it's those very boxes and arrows help us visualize and communicate our architectural decisions effectively.

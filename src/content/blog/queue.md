@@ -5,7 +5,7 @@ pubDate: 'Nov 09 2025'
 tags: ['Code']
 heroImage: '../../assets/blog-placeholder-code.png'
 ---
-## The Queue
+
 The beauty of Queues...watching people who wait for their turn. I appreciate a well-ordered (and polite) queue.
 
 Programming queues is just like that. They are data structure that follow the First In, First Out (**FIFO**) principle. The first element added to the queue will be the first one to be removed.

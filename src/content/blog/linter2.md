@@ -5,7 +5,7 @@ pubDate: 'Nov 12 2025'
 tags: ['CICD']
 heroImage: '../../assets/blog-placeholder-cicd.png'
 ---
-## How to build a linter
+
 You've probably already met the dreaded linter. If not, fear not, read this first: [The dreaded Linter](https://marzsp.github.io/DevNotes/blog/linter/)
 
 Today, we're taking this relationship to the next level. Instead of fearing the Linter, you're going to build one!

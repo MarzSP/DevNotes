@@ -6,7 +6,7 @@ tags: ['CICD']
 heroImage: '../../assets/blog-placeholder-cicd.png'
 ---
 
-# The dreaded linter
+
 You've started your new job and are excited (or afraid) to open your first Pull Request.
 You bravely push your code and wait for the CI/CD pipeline to run. As you sit there watching it,
 you see the dreaded red X popping up next to the linter step. Your build has failed!

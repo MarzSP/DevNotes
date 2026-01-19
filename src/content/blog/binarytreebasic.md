@@ -6,7 +6,6 @@ tags: ['Code']
 heroImage: '../../assets/blog-placeholder-code.png'
 ---
 
-# Basics of Binary Trees
 
 ## What is a Binary Tree?
 Binary trees sound intimidating at first (or atleast, they did to me. Anything with binary in the name used to do that) But once you strip away the new words, a binary tree is actually a very intuitive data structure. It’s basically a way of organizing information so decisions become fast and predictable. Sounds good right?

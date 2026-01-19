@@ -15,6 +15,14 @@
 	--box-shadow:
 		0 2px 6px rgba(var(--gray), 25%), 0 8px 24px rgba(var(--gray), 33%), 0 16px 32px
 		rgba(var(--gray), 33%);
+	--foundations-text: rgba(10, 10, 10, 0.86);
+	--foundations-heading: rgba(10, 10, 10, 0.92);
+	--foundations-desc: rgba(10, 10, 10, 0.72);
+	--foundations-item: rgba(10, 10, 10, 0.82);
+	--foundations-marker: rgba(10, 10, 10, 0.35);
+	--foundations-muted: rgba(10, 10, 10, 0.62);
+	--foundations-link-url: rgba(10, 10, 10, 0.55);
+	--foundations-link: #1e78dc;
 }
 @font-face {
 	font-family: "Atkinson";
@@ -151,11 +159,10 @@ hr {
 	overflow: hidden;
 	/* IE6, IE7 - a 0 height clip, off to the bottom right of the visible 1px box */
 	clip: rect(1px 1px 1px 1px);
-	/* maybe deprecated but we need to support legacy browsers */
+	/* maybe deprecated but need to support legacy browsers */
 	clip: rect(1px, 1px, 1px, 1px);
 	/* modern browsers, clip-path works inwards from each corner */
 	clip-path: inset(50%);
-	/* added line to stop words getting smushed together (as they go onto separate lines and some screen readers do not understand line feeds as a space */
 	white-space: nowrap;
 }
 
@@ -166,7 +173,7 @@ hr {
 	--btn-border: transparent;
 }
 
-/* Modern buttons */
+/* buttons */
 button, .btn {
 	-webkit-appearance: none;
 	appearance: none;
@@ -204,7 +211,7 @@ button, .btn {
 	box-shadow: 0 1px 2px rgba(var(--gray), 0.2);
 }
 
-/* Subtle variant (unpressed filters) */
+/* variant (unpressed filters) */
 .btn--subtle {
 	--btn-bg: rgb(var(--gray-light));
 	--btn-text: rgb(var(--black));
@@ -305,6 +312,114 @@ footer {
 	color: rgb(var(--gray-dark));
 }
 
+/* Foundations cards
+   - Responsive grid
+   - Color variables (light defaults + html.dark overrides)
+   - Slightly darker link color for readability
+*/
+/* Dark-mode overrides for Foundations (restore previous values that matched the original dark look) */
+html.dark {
+    --foundations-text: rgba(255, 255, 255, 0.82);
+    --foundations-heading: rgba(255, 255, 255, 0.95);
+    --foundations-desc: rgba(255, 255, 255, 0.85);
+    --foundations-item: rgba(255, 255, 255, 0.8);
+    --foundations-marker: rgba(255, 255, 255, 0.35);
+    --foundations-muted: rgba(255, 255, 255, 0.62);
+    --foundations-link-url: rgba(255, 255, 255, 0.45);
+    --foundations-link: #7ecbff; /* softer blue for dark backgrounds */
+}
+
+/* In dark mode, keep foundations box background transparent and only soften the border so cards match the site dark theme. */
+html.dark .prose .foundations-box {
+    background: transparent;
+    border: 1px solid rgba(255,255,255,0.06);
+    box-shadow: none;
+}
+
+/* Foundations grid: responsive 1 -> 2 -> 3 columns */
+.foundations-grid {
+	display: grid;
+	gap: 1.5rem;
+	grid-template-columns: 1fr;
+	max-width: 1200px;
+	margin: 0 auto;
+	padding-left: 1rem;
+	padding-right: 1rem;
+}
+
+@media (min-width: 640px) {
+	.foundations-grid {
+		grid-template-columns: repeat(2, minmax(0, 1fr));
+		align-items: start;
+	}
+}
+
+@media (min-width: 1024px) {
+	.foundations-grid {
+		grid-template-columns: repeat(3, minmax(0, 1fr));
+		max-width: 1700px;
+	}
+}
+
+/* Card base */
+.prose .foundations-box {
+	background: rgb(var(--card-bg, 255 255 255));
+	border-radius: 8px;
+	padding: 1.25rem;
+	box-shadow: var(--box-shadow);
+	border: 1px solid rgba(0, 0, 0, 0.06);
+	display: block;
+	color: var(--foundations-text);
+	text-decoration: none;
+	transition: transform 120ms ease, box-shadow 120ms ease, border-color 120ms ease, background 120ms ease;
+}
+
+.prose .foundations-box h2 { margin: 0 0 0.5rem 0; color: var(--foundations-heading); }
+.prose .foundations-box p { margin: 0 0 0.75rem 0; font-size: 0.99rem; color: var(--foundations-desc); }
+.prose .foundations-box ul { margin-top: 0.9rem; padding-left: 1.2rem; }
+.prose .foundations-box li { margin: 0.55rem 0; line-height: 1.45; font-size: 1rem; color: var(--foundations-item); }
+.prose .foundations-box li::marker { color: var(--foundations-marker); }
+.prose .foundations-box .muted { color: var(--foundations-muted); }
+.prose .foundations-box .link-url { color: var(--foundations-link-url); font-size: 0.75rem; font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace; }
+
+/* link color inside foundations boxes: uses a variable so dark/light can be tuned */
+.prose .foundations-box a { color: var(--foundations-link); text-decoration: none; display: inline-flex; flex-direction: column; gap: 0.15rem; }
+.prose .foundations-box a:hover { text-decoration: underline; }
+.prose .foundations-box a:hover .link-url { opacity: 0.9; }
+
+/* Section background accents */
+.prose .foundations-box.foundations-box--websites {
+	background: linear-gradient(
+			180deg,
+			rgba(6, 95, 70, 0.18),
+			rgba(6, 95, 70, 0.07)
+	);
+	border-color: rgba(6, 95, 70, 0.3);
+}
+
+.prose .foundations-box.foundations-box--books {
+	background: linear-gradient(
+			180deg,
+			rgba(88, 35, 139, 0.18),
+			rgba(88, 35, 139, 0.07)
+	);
+	border-color: rgba(88, 35, 139, 0.3);
+}
+
+.prose .foundations-box.foundations-box--podcasts {
+	background: linear-gradient(
+			180deg,
+			rgba(2, 132, 199, 0.18),
+			rgba(2, 132, 199, 0.07)
+	);
+	border-color: rgba(2, 132, 199, 0.3);
+}
+@media (prefers-color-scheme: light) {
+	.foundations-box--websites { background: linear-gradient(180deg, rgba(6, 95, 70, 0.14), rgba(6, 95, 70, 0.06)); }
+	.foundations-box--books { background: linear-gradient(180deg, rgba(88, 35, 139, 0.14), rgba(88, 35, 139, 0.06)); }
+	.foundations-box--podcasts { background: linear-gradient(180deg, rgba(2, 132, 199, 0.14), rgba(2, 132, 199, 0.06)); }
+}
+
 /* Dark mode overrides */
 html.dark body {
 	background: #222;
@@ -364,4 +479,57 @@ html.dark footer .social-links a:hover {
 html.dark footer svg,
 html.dark footer svg path {
 	fill: #f5f5f5;
+}
+
+/* Re-assert Foundations colors after global dark-mode rules so they take precedence. */
+.prose .foundations-box { color: var(--foundations-text); }
+.prose .foundations-box h2 { color: var(--foundations-heading); }
+.prose .foundations-box p { color: var(--foundations-desc); }
+.prose .foundations-box li { color: var(--foundations-item); }
+.prose .foundations-box li::marker { color: var(--foundations-marker); }
+.prose .foundations-box .muted { color: var(--foundations-muted); }
+.prose .foundations-box .link-url { color: var(--foundations-link-url); }
+
+/* Also re-assert under html.dark to be explicit (helps when dark rules use higher specificity) */
+html.dark .prose .foundations-box { color: var(--foundations-text); }
+html.dark .prose .foundations-box h2 { color: var(--foundations-heading); }
+html.dark .prose .foundations-box p { color: var(--foundations-desc); }
+html.dark .prose .foundations-box li { color: var(--foundations-item); }
+html.dark .prose .foundations-box li::marker { color: var(--foundations-marker); }
+html.dark .prose .foundations-box .muted { color: var(--foundations-muted); }
+html.dark .prose .foundations-box .link-url { color: var(--foundations-link-url); }
+
+/* Dark mode: keep cards dark, but with a subtle colour tint per category */
+html.dark .prose .foundations-box {
+	background: rgba(255, 255, 255, 0.03);
+	border: 1px solid rgba(255, 255, 255, 0.08);
+	box-shadow: none;
+}
+
+/* Dark mode tints */
+html.dark .prose .foundations-box.foundations-box--websites {
+	background: linear-gradient(
+			180deg,
+			rgba(6, 95, 70, 0.22),
+			rgba(6, 95, 70, 0.06)
+	);
+	border-color: rgba(6, 95, 70, 0.35);
+}
+
+html.dark .prose .foundations-box.foundations-box--books {
+	background: linear-gradient(
+			180deg,
+			rgba(88, 35, 139, 0.22),
+			rgba(88, 35, 139, 0.06)
+	);
+	border-color: rgba(88, 35, 139, 0.35);
+}
+
+html.dark .prose .foundations-box.foundations-box--podcasts {
+	background: linear-gradient(
+			180deg,
+			rgba(2, 132, 199, 0.22),
+			rgba(2, 132, 199, 0.06)
+	);
+	border-color: rgba(2, 132, 199, 0.35);
 }

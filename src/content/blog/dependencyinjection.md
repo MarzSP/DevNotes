@@ -7,7 +7,7 @@ heroImage: '../../assets/blog-placeholder-code.png'
 ---
 
 
-Dependency Injection can sound complicated when you're a junior, but let's break it down in today's post.
+Dependency Injection can sound complicated when you're a junior, but let's try and break it down in today's post. Hopefully by the end of this you'll see how objects can mind their own business!
 
 At its core, Dependency Injection answers one question:
 

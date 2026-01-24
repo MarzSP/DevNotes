@@ -7,18 +7,16 @@ heroImage: '../../assets/blog-placeholder-cicd.png'
 ---
 
 
-You've started your new job and are excited (or afraid) to open your first Pull Request.
+You've started your new job and are excited (or scared) to open your first Pull Request.
 You bravely push your code and wait for the CI/CD pipeline to run. As you sit there watching it,
 you see the dreaded red X popping up next to the linter step. Your build has failed!
 
-The linter has judged your code and convicted you of style violations.\
-
-so what is a linter anyway?
+The linter has judged your code and convicted you of style violations..so..I hear you wondering: what is a linter anyway?
 
 ## What is a linter?
 A linter is a tool that analyzes your code for potential errors, coding standard violations, and stylistic issues.
 
-Linters help maintain code quality and consistency across a codebase by enforcing predefined rules and best practices.
+Linters help maintain code quality and consistency across a codebase by enforcing predefined rules and best practices. Sounds great, right?
 
 ## Why use a linter?
 Using a linter can have many benefits:

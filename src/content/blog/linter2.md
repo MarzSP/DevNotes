@@ -15,22 +15,18 @@ Let's go!
 
 A linter is **not**:
 
-A compiler
+- A compiler
 
-A formatter
+- A formatter
 
 A linter analyzes code for:
-Suspected errors
+- Suspected errors
 
-Bad patterns
+- Bad patterns
 
-Style violations
+- Style violations
 
-*“Why would you even write that?!”* situations
-
-And instead of saying “that’s fine,”
-it says:
-“I’m not mad… just *disappointed*.”
+- *“Why did I write that?!”* situations
 
 ### Let’s Build One Then
 
@@ -44,7 +40,7 @@ To build a linter, you need three things:
 
 This is where ESLint (or your linter of choice) and GitHub Actions shine together like a passive-aggressive duo.
 
-#### Step 1 — Pick Your Linter (ESLint Is the Sensible Adult Here)
+#### Step 1 — Pick Your Linter
 
 For JavaScript or TypeScript, use ESLint.
 It’s flexible, powerful, and comes with fewer opinions than your senior developer.
@@ -117,13 +113,13 @@ Let’s break down what this masterpiece does.
 
 1. What's in a name?
 
-lint
+> lint
 
 KISS. That means Keep It Simple, Stupid. 
 
 2. Triggers
 
-Runs on:
+ Runs on:
 
 - every push
 
@@ -134,8 +130,9 @@ Runs on:
 - every moment you least expect it *just kidding*
 
 3. Runner
-
-ubuntu-latest
+````
+ubuntu-latest 
+````    
 This is just GitHub’s polite way of saying:
 “We’re judging your code from a Linux box. Behave or the lil penguin will....”
 
@@ -149,7 +146,8 @@ This is just GitHub’s polite way of saying:
 
 - Run your linter
 
-- Smile, 'cos you've just built a linter! w00p!
+
+Now all you have to do is smile, 'cos you've just built a linter! w00p!
 
 
 

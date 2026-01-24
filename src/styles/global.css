@@ -119,11 +119,18 @@ img {
 	height: auto;
 	border-radius: 8px;
 }
-code {
+:not(pre) > code {
 	padding: 2px 5px;
-	background-color: rgb(var(--gray-light));
-	border-radius: 2px;
+	border-radius: 6px;
+	background: rgba(0, 0, 0, 0.06);
+	color: inherit;
 }
+
+/* Dark mode inline code */
+html.dark :not(pre) > code {
+	background: rgba(255, 255, 255, 0.12);
+}
+
 pre {
 	padding: 1.5em;
 	border-radius: 8px;
@@ -131,6 +138,7 @@ pre {
 pre > code {
 	all: unset;
 }
+
 blockquote {
 	border-left: 4px solid var(--accent);
 	padding: 0 0 0 20px;

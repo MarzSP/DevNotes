@@ -6,12 +6,12 @@ tags: ['Code', 'C#']
 heroImage: '../../assets/blog-placeholder-code.png'
 ---
 
-I've started learning C# recently, driven by a mix of curiosity and career aspirations. I don't just want to focus on syntax; I aim to understand the underlying principles and best practices that make C# a powerful language.
+I've started learning C# recently, driven by a mix of curiosity and career aspirations. I focus on syntax but I'm also aiming to understand the underlying principles and best practices that make C# a powerful language.
 
 ## History
 C# was developed by Microsoft in the early 2000s as part of its .NET initiative. It was designed to be a modern, object-oriented language that could compete with Java. Over the years, C# has evolved, with each new version introducing features that enhance productivity and performance.
 
-At first glance, C# looks very familiar if you’ve touched Java. Curly braces, classes everywhere, static typing, the whole ceremony. Early C# was very Java-shaped. Then it quietly started doing its own thing—and doing it well. Properties instead of endless getters and setters. Later on also: LINQ, async/await, pattern matching, records. 
+At first glance, C# looks very familiar if you’ve written code in Java. Curly braces, classes everywhere, static typing, the whole ceremony. Early C# was very Java-ish. Then it quietly started doing its own thing. Properties instead of endless getters and setters. Later on also: LINQ, async/await, pattern matching, records. 
 
 ## Basics
 The C# language is statically typed, meaning that variable types are known at compile time. It supports object-oriented programming principles such as encapsulation, inheritance, and polymorphism. C# also has features like properties and events.

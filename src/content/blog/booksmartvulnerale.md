@@ -1,17 +1,23 @@
 ---
-title: 'Mikko\'s Law'
-description: 'If it\'s Smart, it\'s Vulnerable'
+title: "Mikko's Law"
+description: "If it's Smart, it's Vulnerable"
 pubDate: 'Jan 25 2026'
 tags: ['Books', 'Security']
 heroImage: '../../assets/blog-placeholder-architecture.png'
 ---
-I read If It’s Smart, It’s Vulnerable in 2024, and it left me with an ever so slightly light tingle of paranoia. Like a low steady hum in the back of my mind. That feeling then sticks around while you’re setting up a new device, like a printer or a robot vacuumcleaner, or installing an app, or writing a bit of code that.. “probably won’t be a problem”. This book has taught me to not accept the thought of “probably” anymore.
+Reading If It’s Smart, It’s Vulnerable gave me a new background process I didn’t ask for. A quiet one. It kicks in when I’m setting up a device, installing software, or writing code that feels harmless enough. Every time I think “this will probably be fine,” the book taps me on the shoulder.
 
-Mikko Hyppönen is a legendary figure in the security world. He’s been around since the early days of computer viruses and has seen the landscape evolve over decades. In this book, he distills that experience into a series of essays that explore how our increasing reliance on “smart” technology opens us up to new vulnerabilities.
+Hyppönen has spent decades watching security fail in very predictable ways. He’s seen the shift from simple viruses to sprawling, interconnected systems that are powerful, convenient, and deeply brittle. This book is him walking through what that actually means, using short essays rather than lectures.
 
-Hyppönen has a way of throwing you head first into rabbit-holes without making you feel lost. He glides from real-deal hacks to bigger ideas about trust, complexity, and how we keep building systems faster than we can truly understand them. There’s no fear-mongering involved, just a calm, almost casual reminder that once something becomes “smart”, it also becomes vulnerable in ways we didn’t design for.
+He’s particularly good at moving between concrete examples and bigger ideas. One moment you’re reading about a real breach, the next you’re thinking about trust, complexity, and how little we really understand the systems we depend on. He doesn't use hyped up scare tactics (which is refreshing!).
 
-The book is easy to read without feeling shallow. It doesn’t drown you in jargon, but it also doesn’t hold your hand. You walk away with a real sense of why things fail, not just a list of horror stories. Some of the ideas lingered with me for a long time afterwards — especially how convenience quietly etches away at security. It’s the kind of thing that creeps into your thinking while you’re coding, making you pause while coding and think, “Okay, but what assumptions am I actually making here?”
+The writing hits a nice balance. It’s accessible without being shallow, and technical without being exhausting. You’re left with a clearer sense of why failures happen, not just that they do. The idea that stuck with me most is how convenience quietly erodes security, through shortcuts that add up over time.
 
-__________________
-I had the pleasure of seeing one of his keynotes live — and briefly meeting — Hyppönen in 2026, and it only deepened the impression the book had already left on me. The same clarity, the same grounded use of real-world examples, and the same humble way of raising awareness about the tech we rely on and what's going on in the world. He has a down-to-earth way of explaining complex realities. It’s the kind of perspective that sticks with you, nudging you to think more critically, write better code, and develop a deeper understanding of the technological world you’re helping to build.
+Hearing Hyppönen speak in person later only made that clearer. The same calm delivery, the same focus on real-world consequences, and the same refusal to dramatize. It’s a perspective that stays with you — especially if you build software — and gently raises the bar for how carefully you think about what you’re creating.
+
+-----------------------------------
+Don't want to read an entire book? Here's a few links to his keynotes and talks:
+- [Mikko Hyppönen: Three Decades in CyberSecurity](https://www.youtube.com/watch?v=H14EhT-DRJ8)
+- [Mikko Hyppönen: SPHERE24](https://www.youtube.com/watch?v=gJVsyufZXOQ)
+- [Mikko Hyppönen: Nordic Business Forum](https://www.youtube.com/watch?v=bC9R32N_sOU)
+- Or checkout [his website at https://www.mikko.com

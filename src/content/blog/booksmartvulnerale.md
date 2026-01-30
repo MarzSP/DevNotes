@@ -3,7 +3,7 @@ title: "Mikko's Law"
 description: "If it's Smart, it's Vulnerable"
 pubDate: 'Jan 25 2026'
 tags: ['Books', 'Security']
-heroImage: '../../assets/blog-placeholder-architecture.png'
+heroImage: '../../assets/blog-placeholder-books.png'
 ---
 Reading If It’s Smart, It’s Vulnerable gave me a new background process I didn’t ask for. A quiet one. It kicks in when I’m setting up a device, installing software, or writing code that feels harmless enough. Every time I think “this will probably be fine,” the book taps me on the shoulder.
 

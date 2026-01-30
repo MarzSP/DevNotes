@@ -3,7 +3,7 @@ title: 'The Art of Deception'
 description: 'Book review'
 pubDate: 'Jan 18 2026'
 tags: ['Books', 'Security']
-heroImage: '../../assets/blog-placeholder-architecture.png'
+heroImage: '../../assets/blog-placeholder-books.png'
 ---
 
 A book review of *The Art of Deception* by Kevin Mitnick.

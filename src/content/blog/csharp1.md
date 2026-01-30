@@ -3,7 +3,7 @@ title: 'Learning C#'
 description: 'Curiosity, Career, and a Healthy Amount of Scepticism'
 pubDate: 'Jan 24 2026'
 tags: ['Code', 'C#']
-heroImage: '../../assets/blog-placeholder-code.png'
+heroImage: '../../assets/blog-placeholder-csharp.png'
 ---
 
 I've started learning C# recently, driven by a mix of curiosity and career aspirations. I focus on syntax but I'm also aiming to understand the underlying principles and best practices that make C# a powerful language.

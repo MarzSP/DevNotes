@@ -3,7 +3,7 @@ title: 'C# Records, Explained'
 description: 'Simple data, fewer things to get wrong'
 pubDate: 'Jan 24 2026'
 tags: ['Code', 'C#']
-heroImage: '../../assets/blog-placeholder-code.png'
+heroImage: '../../assets/blog-placeholder-csharp.png'
 ---
 On my journey of learning C#, I've come across  a feature called "records" that has piqued my interest. In the past I had only heard of records in the context of databases so I'd like to share what I have learned about C# records so far.
 

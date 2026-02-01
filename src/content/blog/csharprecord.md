@@ -1,7 +1,7 @@
 ---
-title: 'C# Records, Explained'
+title: 'C# Records'
 description: 'Simple data, fewer things to get wrong'
-pubDate: 'Jan 24 2026'
+pubDate: 'Jan 26 2026'
 tags: ['Code', 'C#']
 heroImage: '../../assets/blog-placeholder-csharp.png'
 ---

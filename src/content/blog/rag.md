@@ -75,16 +75,13 @@ Building a RAG system means setting up two things: an **ingestion pipeline** and
 
 ## The tools
 
-You don't have to build any of this from scratch.
+Good news: you don't have to build any of this from scratch.
 
-**[Semantic Kernel](https://github.com/microsoft/semantic-kernel)** (Microsoft's SDK, available for C# and Python) can handle the chunking and embedding pipeline for you. It's well-suited if you're building on .NET and want something that plays nicely with the rest of the Microsoft AI stack.
+**[Semantic Kernel](https://github.com/microsoft/semantic-kernel)** is Microsoft's SDK for C# and Python that handles the chunking and embedding pipeline. If you're already on .NET, it fits right in.
 
-For the **vector store**, two solid choices:
+For storing your vectors you have two solid options. **[Qdrant](https://qdrant.tech/)** is a dedicated vector database — fast, open source, and built specifically for this job. **[pgvector](https://github.com/pgvector/pgvector)** is a Postgres extension that just bolts vector search onto a database you probably already have. If you don't want to manage another service, pgvector is the easy choice.
 
-- **[Qdrant](https://qdrant.tech/)** — a dedicated vector database. Fast, open source, and built specifically for this job. Good if you want a standalone service.
-- **[pgvector](https://github.com/pgvector/pgvector)** — a Postgres extension that adds vector search to a database you likely already have. If you're already running Postgres and don't want to manage another service, this is the pragmatic choice.
-
-For **embeddings**, OpenAI's `text-embedding-3-small` model is cheap, fast, and good enough for most use cases. You call it with your text, it gives you a vector back.
+For embeddings, OpenAI's `text-embedding-3-small` is cheap, fast, and good enough for most things. You send it text, it gives you a vector back. Done.
 
 ## A quick example
 
@@ -117,10 +114,6 @@ It's probably overkill when:
 - Your data fits comfortably in a single prompt
 - Latency is critical and you can't afford the retrieval step
 
-## The short version
-
-RAG gives AI an open-book exam instead of asking it to memorise everything. Your data gets chunked, embedded, and stored. At query time, the most relevant chunks get retrieved and handed to the model as context. The model reads them and answers.
-
-You don't need to understand vector maths to use it. You just need to understand what it's for.
+You don't need to understand the maths behind vector embeddings to use them. You just need to understand what they're for.
 
 And now you do.

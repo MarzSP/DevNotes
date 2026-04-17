@@ -8,11 +8,11 @@ heroImage: '../../assets/blog-placeholder-code.png'
 
 If you've ever prop-drilled your way through five components just to get a boolean from A to E, Svelte stores are going to feel like a genuine relief.
 
-I came to Svelte after a couple of years in React, and global state management was honestly one of the things I'd made my peace with hating. Redux felt like filing paperwork to change a variable. Context was better but had its own footguns. Zustand was fine, actually, but it was still a library I had to install and learn.
+My frontend background is mostly Vue and Blazor, and honestly, global state was one of those things I'd just quietly accepted as annoying. In Vue you'd reach for Vuex and suddenly you're writing mutations and actions and mapState just to update a counter. Pinia is better, but it's still a whole thing. In Blazor you're either cascading parameters down the tree or wiring up a scoped service and calling StateHasChanged() in the right places and hoping for the best.
 
-Svelte stores are built in. And they're so simple that the first time I used one I spent ten minutes wondering what I was missing.
+Svelte stores are built in. No install, no setup. The first time I used one I kept looking around for the part I was missing.
 
-I wasn't missing anything. They're just straightforward.
+There wasn't one.
 
 ## What a store actually is
 
@@ -48,7 +48,7 @@ Manually subscribing and unsubscribing from stores is a bit tedious. Svelte know
 <button on:click={() => count.update(n => n + 1)}>Add one</button>
 ```
 
-That's it. No `useSelector`. No `connect()`. No boilerplate.
+That's it. No mapState. No commit. No boilerplate.
 
 The component re-renders when `count` changes, and when the component is destroyed, the subscription is cleaned up. Svelte just takes care of it.
 
@@ -82,6 +82,6 @@ export const doubled = derived(count, $count => $count * 2);
 
 ## One thing to watch out for
 
-Stores are module-level singletons. That's great for sharing state across your whole app, but it means if you're doing server-side rendering with SvelteKit, you need to be careful. A store defined at module level will be shared across all users on the server, which is very much not what you want. SvelteKit has patterns for handling this with context, but it's worth knowing about before you run into it at 11pm.
+Stores are module-level singletons. Great for sharing state across your whole app, but if you're doing server-side rendering with SvelteKit, that's a problem. A store defined at module level will be shared across all users on the server, which is very much not what you want. SvelteKit has patterns for handling this with context, but it's worth knowing about before you run into it at 11pm.
 
 Other than that: they're just good. Genuinely the first global state solution I've used where I didn't have to talk myself into liking it.

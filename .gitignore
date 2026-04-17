@@ -83,3 +83,6 @@ Thumbs.db
 
 # === Other generated / temp ===
 .devnotes-temp/
+
+# === Claude Code ===
+.claude/

@@ -1,4 +1,4 @@
-Next---
+---
 title: 'RAG: Giving AI a Memory It Can Actually Trust'
 description: 'What Retrieval-Augmented Generation is and why your AI needs it'
 pubDate: 'Feb 14 2026'
